@@ -10,39 +10,36 @@ import WindiCSS from 'vite-plugin-windicss'
 import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Prism from 'markdown-it-prism'
-import viteSSR from 'vite-ssr/plugin'
-import getPageProps from './serverless/api/get-page-props'
+import vitedge from 'vitedge/plugin.js'
+// Import Tailwind config directly to avoid ES issues in WindiCSS plugin
+import tailwindConfig from './tailwind.config'
 
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': `${path.resolve(process.cwd(), 'src')}/`,
     },
   },
   plugins: [
-    viteSSR(),
-
-    {
-      // API mock-up
-      configureServer({ middlewares }) {
-        middlewares.use('/api/get-page-props', getPageProps)
-      },
-    },
+    vitedge(),
 
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
-    Pages({
+    // @ts-ignore
+    Pages.default({
       extensions: ['vue', 'md'],
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-    Layouts(),
+    // @ts-ignore
+    Layouts.default(),
 
     // https://github.com/antfu/vite-plugin-md
-    Markdown({
+    // @ts-ignore
+    Markdown.default({
       wrapperClasses: 'prose prose-sm m-auto text-left',
       headEnabled: false, // This relies on useHead
       markdownItSetup(md) {
@@ -52,12 +49,13 @@ export default defineConfig({
     }),
 
     // https://github.com/antfu/vite-plugin-components
-    ViteComponents({
+    // @ts-ignore
+    ViteComponents.default({
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
 
       // allow auto import and register components used in markdown
-      customLoaderMatcher: id => id.endsWith('.md'),
+      customLoaderMatcher: (id: string) => id.endsWith('.md'),
 
       // auto import icons
       customComponentResolvers: [
@@ -70,10 +68,13 @@ export default defineConfig({
     }),
 
     // https://github.com/antfu/vite-plugin-icons
-    ViteIcons(),
+    // @ts-ignore
+    ViteIcons.default(),
 
     // https://github.com/antfu/vite-plugin-windicss
-    WindiCSS({
+    // @ts-ignore
+    WindiCSS.default({
+      config: tailwindConfig,
       safelist: 'prose prose-sm m-auto',
     }),
 
@@ -105,19 +106,14 @@ export default defineConfig({
     }),
 
     // https://github.com/intlify/vite-plugin-vue-i18n
-    VueI18n({
-      include: [path.resolve(__dirname, 'locales/**')],
+    // @ts-ignore
+    VueI18n.default({
+      include: [path.resolve(process.cwd(), 'locales/**')],
     }),
   ],
 
   optimizeDeps: {
-    include: [
-      'vue',
-      'vue-router',
-      '@vueuse/core',
-    ],
-    exclude: [
-      'vue-demi',
-    ],
+    include: ['vue', 'vue-router', '@vueuse/core'],
+    exclude: ['vue-demi'],
   },
 })
