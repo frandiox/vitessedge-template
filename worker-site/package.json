@@ -1,0 +1,9 @@
+{
+  "main": "index.js",
+  "dependencies": {
+    "@cloudflare/kv-asset-handler": "^0.0.12"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.1.0"
+  }
+}

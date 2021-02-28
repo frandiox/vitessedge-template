@@ -4,3 +4,4 @@ dist
 dist-ssr
 node_modules
 **/_*
+worker-site/worker

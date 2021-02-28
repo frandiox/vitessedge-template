@@ -7,11 +7,9 @@
   "scripts": {
     "dev": "vitedge --port 3333 --open --ssr",
     "dev:spa": "vitedge --port 3333 --open",
-    "clean": "rm -rf dist && rm -rf serverless/public && rm -rf serverless/api/renderer",
-    "build": "npm run clean && cross-env NODE_ENV=production vite-ssr build && ./scripts/move-dist.sh",
-    "preview": "cd serverless && vercel dev",
-    "deploy": "cd serverless && vercel",
-    "deploy:prod": "cd serverless && vercel --prod"
+    "build": "rm -rf dist && cross-env NODE_ENV=production vitedge build",
+    "preview": "cd worker-site && wrangler dev",
+    "deploy": "cd functions && wrangler publish"
   },
   "dependencies": {
     "@vueuse/core": "^4.1.1",

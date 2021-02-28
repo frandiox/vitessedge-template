@@ -1,0 +1,11 @@
+name = "vitessedge"
+type = "webpack"
+account_id = "<Account ID here>"
+workers_dev = true
+route = ""
+zone_id = ""
+webpack_config = "webpack.config.js"
+
+[site]
+bucket = "../dist/client"
+entry-point = "."
