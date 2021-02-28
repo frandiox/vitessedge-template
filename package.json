@@ -8,7 +8,7 @@
     "dev": "vitedge --port 3333 --open --ssr",
     "dev:spa": "vitedge --port 3333 --open",
     "clean": "rm -rf dist && rm -rf serverless/public && rm -rf serverless/api/renderer",
-    "build": "pnpm clean && cross-env NODE_ENV=production vite-ssr build && ./scripts/move-dist.sh",
+    "build": "npm run clean && cross-env NODE_ENV=production vite-ssr build && ./scripts/move-dist.sh",
     "preview": "cd serverless && vercel dev",
     "deploy": "cd serverless && vercel",
     "deploy:prod": "cd serverless && vercel --prod"
@@ -36,7 +36,6 @@
     "eslint": "^7.20.0",
     "markdown-it-prism": "^2.1.4",
     "node-fetch": "^2.6.1",
-    "pnpm": "^5.17.2",
     "rimraf": "^3.0.2",
     "ts-node": "^9.1.1",
     "typescript": "4.1.x",
