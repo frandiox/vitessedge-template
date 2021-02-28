@@ -31,6 +31,17 @@ export default defineConfig({
     // @ts-ignore
     Pages.default({
       extensions: ['vue', 'md'],
+      extendRoute(route: any) {
+        if (route.component.endsWith('.md')) {
+          return {
+            ...route,
+            meta: {
+              // Disable page props for static MD routes
+              propsGetter: false,
+            },
+          }
+        }
+      },
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts

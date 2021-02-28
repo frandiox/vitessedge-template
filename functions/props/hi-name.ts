@@ -1,4 +1,4 @@
-import { EdgeProps } from 'vitedge'
+import type { EdgeProps } from 'vitedge'
 
 export default <EdgeProps>{
   async handler({ params }) {
@@ -7,5 +7,10 @@ export default <EdgeProps>{
         message: `Hello from the API, ${params?.name || 'anonymous'}`,
       },
     }
+  },
+  options: {
+    cache: {
+      html: 60 * 60 * 24 * 7,
+    },
   },
 }
