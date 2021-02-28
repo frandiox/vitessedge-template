@@ -1,14 +1,18 @@
-# Vitesse SSR
+# Vitessedge
 
-> Vue + Vite + SSR template based on [@antfu](https://github.com/antfu)'s [Vitesse](https://github.com/antfu/vitesse) with [`vite-ssr`](https://github.com/frandiox/vite-ssr).
+Deploy your fullstack SSR apps to Cloudflare Workers using [Vitedge](https://github.com/frandiox/vitedge).
+
+> Vue + Vite + SSR template based on [@antfu](https://github.com/antfu)'s [Vitesse](https://github.com/antfu/vitesse)
 
 <p align='center'>
-<a href="https://vitesse-ssr.vercel.app/">Live Demo</a>
+<a href="https://vitessedge.zable.workers.dev/">Live Demo</a>
 </p>
 
 ## Features
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
+
+- ⚔️ Edge-side rendering in Cloudflare Workers via [Vitedge](https://github.com/frandiox/vitedge), with edge cache and HTTP/2 server push
 
 - 🗂 [File based routing](./src/pages)
 
@@ -28,11 +32,9 @@
 
 - 🔥 Use the [new `<script setup>` style](https://github.com/vuejs/rfcs/pull/227)
 
-- 🖨 Server-side rendering (SSR) in Node.js via [vite-ssr](https://github.com/frandiox/vite-ssr)
-
 - 🦾 TypeScript, of course
 
-- ☁️ Deploy on Vercel, minimal [config](./serverless/vercel.json)
+- ☁️ Deploy on Cloudflare Workers, minimal [setup](./worker-site/index.js)
 
 <br>
 
@@ -72,8 +74,8 @@
 ### Dev tools
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [`vite-ssr`](https://github.com/frandiox/vite-ssr) - Server-side rendering
-- [Vercel](https://vercel.com/) - deploy
+- [Vitedge](https://github.com/frandiox/vitedge) - Edge-side rendering
+- [Wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) - deploy to Cloudflare Workers
 - [VS Code Extensions](./.vscode/extensions.json)
   - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
   - [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify)
@@ -91,14 +93,14 @@ As this template is strongly opinionated, the following provides a curated list 
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/frandiox/vitesse-ssr-template/generate).
+[Create a repo from this template on GitHub](https://github.com/frandiox/vitessedge-template/generate).
 
 ### Clone to local
 
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit frandiox/vitesse-ssr-template my-vitesse-app
+npx degit frandiox/vitessedge-template my-vitesse-app
 cd my-vitesse-app
 npm i
 ```
@@ -137,14 +139,15 @@ npm run build
 
 And you will see the generated files in `dist`, and some of these files will be moved to `serverless` for deployment.
 
-### Deploy on Vercel
+### Deploy on Cloudflare Workers
 
-Go to [Vercel](https://vercel.com) and install its CLI. Then:
+1. Create your [Cloudflare](https://www.cloudflare.com/) account.
+2. Install [Wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) CLI.
+3. Modify the `account_id` in [wrangler.toml](./worker-site/wrangler.toml). Then:
 
 ```bash
-npm run preview # Simulate Vercel environment locally
+npm run preview # Simulate Worker environment locally
 npm run deploy
-npm run deploy:prod
 ```
 
 ## Why
