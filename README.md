@@ -8,7 +8,7 @@
 
 ## Features
 
-- ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
+- ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
 - 🗂 [File based routing](./src/pages)
 
@@ -72,7 +72,6 @@
 ### Dev tools
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [pnpm](https://pnpm.js.org/) - fast, disk space efficient package manager
 - [`vite-ssr`](https://github.com/frandiox/vite-ssr) - Server-side rendering
 - [Vercel](https://vercel.com/) - deploy
 - [VS Code Extensions](./.vscode/extensions.json)
@@ -101,7 +100,7 @@ If you prefer to do it manually with the cleaner git history
 ```bash
 npx degit frandiox/vitesse-ssr-template my-vitesse-app
 cd my-vitesse-app
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
+npm i
 ```
 
 ## Checklist
@@ -124,8 +123,8 @@ And, enjoy :)
 Just run and visit http://localhost:3333
 
 ```bash
-pnpm dev # SSR development
-pnpm dev:spa # SPA without SSR
+npm run dev # SSR development
+npm run dev:spa # SPA without SSR
 ```
 
 ### Build
@@ -133,7 +132,7 @@ pnpm dev:spa # SPA without SSR
 To build the App, run
 
 ```bash
-pnpm build
+npm run build
 ```
 
 And you will see the generated files in `dist`, and some of these files will be moved to `serverless` for deployment.
@@ -143,9 +142,9 @@ And you will see the generated files in `dist`, and some of these files will be 
 Go to [Vercel](https://vercel.com) and install its CLI. Then:
 
 ```bash
-pnpm preview # Simulate Vercel environment locally
-pnpm deploy
-pnpm deploy:prod
+npm run preview # Simulate Vercel environment locally
+npm run deploy
+npm run deploy:prod
 ```
 
 ## Why
