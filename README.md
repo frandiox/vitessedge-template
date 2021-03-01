@@ -1,12 +1,18 @@
 # Vitessedge
 
-Deploy your fullstack SSR apps to Cloudflare Workers using [Vitedge](https://github.com/frandiox/vitedge).
+<p align="center">
+  <img width="500" src="./logo.png" alt="Vitessedge">
+</p>
 
-> Vue + Vite + SSR template based on [@antfu](https://github.com/antfu)'s [Vitesse](https://github.com/antfu/vitesse)
+<p align="center">
+Deploy your fullstack SSR apps to Cloudflare Workers using [Vitedge](https://github.com/frandiox/vitedge).
+</p>
 
 <p align='center'>
 <a href="https://vitessedge.zable.workers.dev/">Live Demo</a>
 </p>
+
+> Vue + Vite + SSR template based on [@antfu](https://github.com/antfu)'s [Vitesse](https://github.com/antfu/vitesse)
 
 ## Features
 
