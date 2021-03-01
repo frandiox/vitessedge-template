@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-Deploy your fullstack SSR apps to Cloudflare Workers using [Vitedge](https://github.com/frandiox/vitedge).
+Deploy your fullstack SSR apps to Cloudflare Workers using <a href="https://github.com/frandiox/vitedge">Vitedge</a>.
 </p>
 
 <p align='center'>
