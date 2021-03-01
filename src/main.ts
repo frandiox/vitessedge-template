@@ -8,7 +8,7 @@ import App from './App.vue'
 
 const routes = setupLayouts(generatedRoutes)
 
-// https://github.com/frandiox/vite-ssr
+// https://github.com/frandiox/vitedge
 export default vitedge(
   App,
   {
