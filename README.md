@@ -26,7 +26,7 @@ Deploy your fullstack SSR apps to Cloudflare Workers using [Vitedge](https://git
 
 - 😃 [Use icons from any icon sets, with no compromise](./src/components)
 
-- 🌍 [I18n ready](./locales)
+- 🌍 [I18n ready](./locales) with different routes for each language.
 
 - 🗒 [Markdown Support](https://github.com/antfu/vite-plugin-md)
 
