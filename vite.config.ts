@@ -119,7 +119,7 @@ export default defineConfig({
     // https://github.com/intlify/vite-plugin-vue-i18n
     // @ts-ignore
     VueI18n.default({
-      include: [path.resolve(process.cwd(), 'locales/**')],
+      include: [path.resolve(process.cwd(), 'src/i18n/translations/**')],
     }),
   ],
 
