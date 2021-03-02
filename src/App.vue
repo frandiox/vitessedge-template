@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head'
 
-const title = 'Vitesse SSR'
-const description = 'Opinionated SSR Vite Starter Template'
+const title = 'Vitesse × Vitedge'
+const description =
+  'Opinionated SSR Vite Starter Template for Cloudflare Workers'
 
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
@@ -16,7 +17,7 @@ useHead({
     {
       property: 'og:image',
       content:
-        'https://repository-images.githubusercontent.com/341177866/d42c1300-7633-11eb-84fd-ec68894d4fc9',
+        'https://repository-images.githubusercontent.com/343114407/620b7080-7b02-11eb-96bc-e2f02ef328a7',
     },
   ],
 })

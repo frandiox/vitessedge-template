@@ -28,7 +28,7 @@ const props = defineProps({
         href="https://github.com/frandiox/vitessedge-template"
         target="_blank"
       >
-        Vitesse SSR
+        Vitesse × Vitedge
       </a>
     </p>
     <p>
