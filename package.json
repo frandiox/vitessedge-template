@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=14"
+    "node": ">=14.16"
   },
   "scripts": {
     "dev": "vitedge --port 3333 --open --ssr",
