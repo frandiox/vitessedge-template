@@ -1,8 +1,8 @@
 import 'windi.css'
 import './styles/main.css'
 import vitedge from 'vitedge'
-import generatedRoutes from 'pages-generated'
-import { setupLayouts } from 'layouts-generated'
+import generatedRoutes from 'virtual:generated-pages'
+import { setupLayouts } from 'virtual:generated-layouts'
 import { installI18n, extractLocaleFromPath, DEFAULT_LOCALE } from './i18n'
 import App from './App.vue'
 
