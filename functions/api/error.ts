@@ -1,5 +1,5 @@
-import type { ApiEndpoint } from 'vitedge'
 import { BadRequestError } from 'vitedge/errors'
+import type { ApiEndpoint } from 'vitedge'
 
 export default <ApiEndpoint>{
   async handler() {
