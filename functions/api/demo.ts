@@ -5,6 +5,7 @@ export default <ApiEndpoint>{
     return {
       data: {
         hello: 'world',
+        env: import.meta.env.VITEDGE_TEST,
       },
     }
   },

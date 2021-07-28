@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "ESNext",
-    "target": "es2016",
-    "lib": ["DOM", "ESNext"],
+    "target": "es2019",
+    "lib": ["DOM", "ESNext", "WebWorker"],
     "strict": true,
     "esModuleInterop": true,
     "incremental": true,
@@ -16,10 +16,11 @@
     "types": [
       "vite/client",
       "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
+      "vite-plugin-vue-layouts/client",
+      "@cloudflare/workers-types"
     ],
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*", "functions/*"]
     }
   },
   "exclude": ["dist", "node_modules"]

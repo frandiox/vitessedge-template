@@ -1,3 +1,7 @@
+/* Worker entry */
+// This file is only used in production and
+// preview mode, not during development.
+
 import { handleEvent } from 'vitedge/worker'
 
 addEventListener('fetch', (event) => {
