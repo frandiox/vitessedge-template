@@ -11,8 +11,6 @@ import { VitePWA } from 'vite-plugin-pwa'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Prism from 'markdown-it-prism'
 import vitedge from 'vitedge/plugin.js'
-// Import Tailwind config directly to avoid ES issues in WindiCSS plugin
-import tailwindConfig from './tailwind.config'
 
 export default defineConfig({
   resolve: {
@@ -84,8 +82,8 @@ export default defineConfig({
 
     // https://github.com/antfu/vite-plugin-windicss
     // @ts-ignore
-    WindiCSS.default({
-      config: tailwindConfig,
+    WindiCSS({
+      // config: tailwindConfig,
       safelist: 'prose prose-sm m-auto',
     }),
 
